@@ -1,0 +1,319 @@
+html,
+body,
+div{
+	margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #cccccc;
+}
+
+h1{
+  text-align: center;
+  color: #ff6600;
+}
+
+@lineColor:#e1e1e1;
+
+@keyframes fade-in {
+  0% {opacity: 0;}/*初始状态 透明度为0*/
+  40% {opacity: 0;}/*过渡状态 透明度为0*/
+  100% {opacity: 1;}/*结束状态 透明度为1*/
+}
+@-webkit-keyframes fade-in {/*针对webkit内核*/
+  0% {opacity: 0;}
+  40% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.border_radius(@radius){
+  -webkit-border-radius:@radius;
+  -moz-border-radius:@radius;
+  -ms-border-radius:@radius;
+  -o-border-radius:@radius;
+  border-radius:@radius;
+}
+
+
+.football_pitch{
+    position: relative;
+    width:1000px;
+    height: 500px;
+    margin: 40px auto;
+    background: url("grass.png") repeat;
+    border: 4px solid @lineColor;
+    overflow: hidden;
+
+    .lines {
+      animation: fade-in;/*动画名称*/
+      animation-duration: 1.5s;/*动画持续时间*/
+      -webkit-animation:fade-in 1.5s;/*针对webkit内核*/
+
+      .halfway_line {
+        width: 4px;
+        height: 500px;
+        position: absolute;
+        top: 0px;
+        left: 498px;
+        background-color: @lineColor;
+      }
+
+      .center_circle {
+        position: absolute;
+        top: 196px;
+        left: 446px;
+        width: 100px;
+        height: 100px;
+        border: 4px solid @lineColor;
+        .border_radius(50%);
+      }
+
+      .center_spot {
+        position: absolute;
+        top: 245px;
+        left: 495px;
+        width: 10px;
+        height: 10px;
+        .border_radius(50%);
+        background-color: #ffffff;
+      }
+
+      .penalty_arc_containner_left {
+        position: absolute;
+        width: 25px;
+        height: 100px;
+        left: 141px;
+        top: 196px;
+        overflow: hidden;
+
+        .penalty_arc {
+          float: right;
+          width: 100px;
+          height: 100px;
+          border: 4px solid @lineColor;
+          .border_radius(50%);
+
+        }
+      }
+
+      .penalty_area_left {
+        position: absolute;
+        left: -4px;
+        top: 96px;
+        width: 140px;
+        height: 300px;
+        border: 4px solid @lineColor;
+      }
+
+      .penalty_spot_left {
+        position: absolute;
+        left: 91px;
+        top: 245px;
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff;
+        .border_radius(50%);
+      }
+
+      .goal_area_area {
+        position: absolute;
+        left: -4px;
+        top: 196px;
+        width: 60px;
+        height: 100px;
+        border: 4px solid @lineColor;
+      }
+
+      .corner_area_left_top {
+        position: absolute;
+        left: -8px;
+        top: -8px;
+        width: 16px;
+        height: 16px;
+        border: 4px solid @lineColor;
+        .border_radius(50%);
+      }
+
+      .cornner_area_left_bottom {
+        position: absolute;
+        left: -8px;
+        bottom: -8px;
+        width: 16px;
+        height: 16px;
+        border: 4px solid @lineColor;
+        .border_radius(50%);
+      }
+
+      .penalty_arc_containner_right {
+        position: absolute;
+        width: 25px;
+        height: 100px;
+        right: 141px;
+        top: 196px;
+        overflow: hidden;
+
+        .penalty_arc {
+          float: left;
+          width: 100px;
+          height: 100px;
+          border: 4px solid @lineColor;
+          .border_radius(50%);
+
+        }
+      }
+
+      .penalty_area_right {
+        position: absolute;
+        right: -4px;
+        top: 96px;
+        width: 140px;
+        height: 300px;
+        border: 4px solid @lineColor;
+      }
+
+      .penalty_spot_right {
+        position: absolute;
+        right: 91px;
+        top: 245px;
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff;
+        .border_radius(50%);
+      }
+
+      .goal_area_area {
+        position: absolute;
+        right: -4px;
+        top: 196px;
+        width: 60px;
+        height: 100px;
+        border: 4px solid @lineColor;
+      }
+
+      .corner_area_right_top {
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        width: 16px;
+        height: 16px;
+        border: 4px solid @lineColor;
+        .border_radius(50%);
+      }
+
+      .cornner_area_right_bottom {
+        position: absolute;
+        right: -8px;
+        bottom: -8px;
+        width: 16px;
+        height: 16px;
+        border: 4px solid @lineColor;
+        .border_radius(50%);
+      }
+    }
+
+    .schedules{
+      div{
+        position: absolute;
+        text-align: center;
+        .border_radius(6px);
+      }
+      .match-vs16{
+        width: 150px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #f1c40f;;
+        color: #f9f9f9;
+      }
+      .match-vs8{
+        width: 150px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #f39c12;;
+        color: #f9f9f9;
+      }
+      .match-vs4{
+        width: 120px;
+        height: 80px;
+        line-height: 80px;
+        background-color: #e67e22;;
+        color: #f9f9f9;
+      }
+      .match-vs2{
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #d35400;;
+        color: #f9f9f9;
+      }
+
+      .match-49{
+        left: 20px;
+        top: 40px;
+      }
+      .match-50{
+        left: 20px;
+        top: 140px;
+      }
+      .match-51{
+        right: 20px;
+        top: 40px;
+      }
+      .match-52{
+        right: 20px;
+        top: 140px;
+      }
+      .match-53{
+        left: 20px;
+        top: 300px;
+      }
+      .match-54{
+        left: 20px;
+        top: 400px;
+      }
+      .match-55{
+        right: 20px;
+        top: 300px;
+      }
+      .match-56{
+        right: 20px;
+        top: 400px;
+      }
+      .match-57{
+        left: 180px;
+        top: 80px;
+      }
+      .match-58{
+        left: 180px;
+        top: 340px;
+      }
+      .match-59{
+        right: 180px;
+        top: 80px;
+      }
+      .match-60{
+        right: 180px;
+        top: 340px;
+      }
+      .match-61{
+        left: 280px;
+        top: 200px;
+      }
+      .match-62{
+        right: 280px;
+        top: 200px;
+      }
+      .match-63{
+        left: 440px;
+        top: 260px;
+      }
+      .match-64{
+        left: 440px;
+        top: 200px;
+        background-color: #c0392b;
+      }
+    }
+}
+
+
+
